@@ -1,1 +1,3 @@
-logFile="/tmp/particle-state.log"
+import tempfile
+
+logFile="%s/particle-state.log" % tempfile.gettempdir()
