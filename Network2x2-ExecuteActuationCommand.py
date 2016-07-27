@@ -92,6 +92,6 @@ if __name__ == "__main__":
         xData, yData, annotations = dataFilter.getData(filter)
         dataPlotter.addPlot(xData, yData, annotations, "[%s] %s" % (filter.nodeId, filter.name))
 
-    dataPlotter.setWindowTitle("Network %sx%s Simulation" % (numRows, numColumns))
+    dataPlotter.setWindowTitle("Network %sx%s Simulation - execute command actuation" % (numRows, numColumns))
     dataFilter.printValues()
     dataPlotter.plot()

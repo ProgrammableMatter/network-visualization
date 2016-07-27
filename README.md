@@ -25,4 +25,10 @@ Value mappings may be adjusted in
 
     Mappings.py
 
+Screenshots
+-----------
+### 3x3 network simulation - communication/states
+![3x3 network simulation - communication/states](./examples/network_2x2_simulation_-_execute_command_actuation.png)
+### 3x3 network simulation - communication/states
+![3x3 network simulation - communication/states](./examples/network_3x3_simulation.png)
     
