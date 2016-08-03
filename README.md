@@ -1,9 +1,6 @@
-C struct to Json auto-generator
+Particle Network Visualization
 ===============================
-
-The auto generator is used to build a register description file for the 
-[Avrora](http://compilers.cs.ucla.edu/avrora/) simulator using the particle
-[platform](https://github.com/ProgrammableMatter/avrora-particle-platform) implementation.
+Visualization tool for plotting communication/wire/LED signals, interrupts, global variable values and much more.
 
 Usage
 -----
