@@ -42,6 +42,8 @@ class Plotter:
         plt.title(title, y=0.5)
         plt.xlabel(xLabel)
         plt.ylabel(yLabel)
+        plt.gca().axes.get_xaxis().set_visible(False)
+        plt.gca().axes.get_yaxis().set_visible(False)
         plt.grid()
 
     def setWindowTitle(self, title):
@@ -103,6 +105,7 @@ class Plotter:
             self.__newSubplot(xData, yData, annotations, title, xLabel, yLabel)
             row = row + 1
             plt.axis([0, self.maxX, -0.2, yMax + 0.2])
+
         fig.tight_layout()
         plt.subplots_adjust(left=self.leftMargin, right=self.rightMargin, top=self.topMargin, bottom=self.bottomMargin,
                             hspace=self.hSpace, wspace=self.wSpace)

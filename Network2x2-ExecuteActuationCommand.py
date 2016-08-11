@@ -55,42 +55,42 @@ if __name__ == "__main__":
     dataPlotter.addPlot(xData, yData, annotations, "[%s] %s" % (filter.nodeId, filter.name))
 
 
-    filter = fltr.SampleFilter(domain="SRAM", name="Particle.actuationCommand.executionState", nodeId=2)
-    dataFilter.filter(filter)
-    xData, yData, annotations = dataFilter.getData(filter)
-    dataPlotter.addPlot(xData, yData, annotations, "[%s] %s" % (filter.nodeId, filter.name))
-
-    filter = fltr.SampleFilter(domain="SRAM", name="Particle.actuationCommand.executionState", nodeId=3)
-    dataFilter.filter(filter)
-    xData, yData, annotations = dataFilter.getData(filter)
-    dataPlotter.addPlot(xData, yData, annotations, "[%s] %s" % (filter.nodeId, filter.name))
-
-    # char out plots
-
-    for id in range(0, nodesTotal):
-        filter = fltr.SampleFilter(domain="SRAM", name="char-out", nodeId=id)
-        dataFilter.removeSamples(filter)
-        dataFilter.filter(filter)
-        xData, yData, annotations = dataFilter.getData(filter)
-        annotations = pltr.reMapAnnotation(annotations, charOutToHumanReadableAnnotation)
-        dataPlotter.addPlot(xData, yData, annotations, "[%s] %s" % (filter.nodeId, filter.name))
-
-    # int16 out plots
-
-    for id in range(0, nodesTotal):
-        filter = fltr.SampleFilter(domain="SRAM", name="int16-out", nodeId=id)
-        dataFilter.removeSamples(filter)
-        dataFilter.filter(filter)
-        xData, yData, annotations = dataFilter.getData(filter)
-        dataPlotter.addPlot(xData, yData, annotations, "[%s] %s" % (filter.nodeId, filter.name))
-
-    # node state plots
-
-    for id in range(0, nodesTotal):
-        filter = fltr.SampleFilter(domain="SRAM", name="Particle.node.state", nodeId=id)
-        dataFilter.filter(filter)
-        xData, yData, annotations = dataFilter.getData(filter)
-        dataPlotter.addPlot(xData, yData, annotations, "[%s] %s" % (filter.nodeId, filter.name))
+    # filter = fltr.SampleFilter(domain="SRAM", name="Particle.actuationCommand.executionState", nodeId=2)
+    # dataFilter.filter(filter)
+    # xData, yData, annotations = dataFilter.getData(filter)
+    # dataPlotter.addPlot(xData, yData, annotations, "[%s] %s" % (filter.nodeId, filter.name))
+    #
+    # filter = fltr.SampleFilter(domain="SRAM", name="Particle.actuationCommand.executionState", nodeId=3)
+    # dataFilter.filter(filter)
+    # xData, yData, annotations = dataFilter.getData(filter)
+    # dataPlotter.addPlot(xData, yData, annotations, "[%s] %s" % (filter.nodeId, filter.name))
+    #
+    # # char out plots
+    #
+    # for id in range(0, nodesTotal):
+    #     filter = fltr.SampleFilter(domain="SRAM", name="char-out", nodeId=id)
+    #     dataFilter.removeSamples(filter)
+    #     dataFilter.filter(filter)
+    #     xData, yData, annotations = dataFilter.getData(filter)
+    #     annotations = pltr.reMapAnnotation(annotations, charOutToHumanReadableAnnotation)
+    #     dataPlotter.addPlot(xData, yData, annotations, "[%s] %s" % (filter.nodeId, filter.name))
+    #
+    # # int16 out plots
+    #
+    # for id in range(0, nodesTotal):
+    #     filter = fltr.SampleFilter(domain="SRAM", name="int16-out", nodeId=id)
+    #     dataFilter.removeSamples(filter)
+    #     dataFilter.filter(filter)
+    #     xData, yData, annotations = dataFilter.getData(filter)
+    #     dataPlotter.addPlot(xData, yData, annotations, "[%s] %s" % (filter.nodeId, filter.name))
+    #
+    # # node state plots
+    #
+    # for id in range(0, nodesTotal):
+    #     filter = fltr.SampleFilter(domain="SRAM", name="Particle.node.state", nodeId=id)
+    #     dataFilter.filter(filter)
+    #     xData, yData, annotations = dataFilter.getData(filter)
+    #     dataPlotter.addPlot(xData, yData, annotations, "[%s] %s" % (filter.nodeId, filter.name))
 
     dataPlotter.setWindowTitle("Network %sx%s Simulation - execute command actuation" % (numRows, numColumns))
     dataFilter.printValues()
