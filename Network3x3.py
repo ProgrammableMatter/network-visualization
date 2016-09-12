@@ -46,6 +46,11 @@ if __name__ == "__main__":
     xData, yData, annotations = dataFilter.getData(filter)
     dataPlotter.addPlot(xData, yData, annotations, "[%s] %s" % (filter.nodeId, filter.name))
 
+    filter = fltr.SampleFilter(domain="WIRE", name="tx-east", nodeId=3)
+    dataFilter.filter(filter)
+    xData, yData, annotations = dataFilter.getData(filter)
+    dataPlotter.addPlot(xData, yData, annotations, "[%s] %s" % (filter.nodeId, filter.name))
+
     filter = fltr.SampleFilter(domain="WIRE", name="tx-south", nodeId=3)
     dataFilter.filter(filter)
     xData, yData, annotations = dataFilter.getData(filter)

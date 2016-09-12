@@ -27,7 +27,7 @@ class Plotter:
         """
         Create a new figure and plot data using blue, square markers.
         """
-        points = plt.plot(xValues, yValues, linestyle="-", color="b", marker=".", picker=5)  # line plot
+        points = plt.plot(xValues, yValues, linestyle="-", color="#1E67B6", marker=".", picker=5)  # line plot
 
         for x, y, a in zip(points[0]._x, points[0]._y, annotations):
             annotation = points[0].axes.annotate("%s" % a, xy=(x, y), xycoords='data',
