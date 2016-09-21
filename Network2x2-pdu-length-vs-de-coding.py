@@ -71,6 +71,23 @@ if __name__ == "__main__":
         xData, yData, annotations = dataFilter.getData(filter)
         dataPlotter.addPlot(xData, yData, annotations, "[%s] %s" % (filter.nodeId, filter.name))
 
-    dataPlotter.setWindowTitle("Network %sx%s Simulation" % (numRows, numColumns))
+    for id in range(0, nodesTotal):
+        interruptName = "NORTH_RECEPTION"
+        dataFilter.setValueMapping(mappingConfig.interruptToFloatValueMapping)
+
+        pltr.addInterruptPlot(dataFilter, dataPlotter, title=("[%s] invoke" % id), nodeId=id,
+                              interruptToNumberMapping=mappingConfig.interruptToNumberMapping,
+                              facet="invoke",
+                              interruptName=interruptName)
+
+        interruptName = "TX_RX_TIMER_OVERVLOW"
+        dataFilter.setValueMapping(mappingConfig.interruptToFloatValueMapping)
+
+        pltr.addInterruptPlot(dataFilter, dataPlotter, title=("[%s] invoke" % id), nodeId=id,
+                              interruptToNumberMapping=mappingConfig.interruptToNumberMapping,
+                              facet="invoke",
+                              interruptName=interruptName)
+
+    dataPlotter.setWindowTitle("Network %sx%s Simulation - interrupts" % (numRows, numColumns))
     dataFilter.printValues()
     dataPlotter.plot()
