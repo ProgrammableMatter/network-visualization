@@ -7,19 +7,21 @@ interruptToFloatValueMapping = {"posted": 1.0, "unposted": 0.0,
                                 "invoke": 1.0, "return": 0.0,
                                 }
 
-interruptToNumberMapping = {"TX_RX_TIMER_TOP": "#7",
-                            "TX_RX_TIMER_CENTER": "#8",
+interruptToNumberMapping = {"TX_TIMER_INTERRUPT": "#7",
+                            "LOCAL_TIME_TIMER_INTERRUPT": "#8",
                             "TX_RX_TIMER_OVERVLOW": "#9",
-                            #"TX_RX_TIMEOUT_INTERRUPT": "#20",
+                            # "TX_RX_TIMEOUT_INTERRUPT": "#20",
                             "NORTH_RECEPTION": "#19",
                             "EAST_RECEPTION": "#3",
                             "SOUTH_RECEPTION": "#2",
                             }
 
-interruptToNameMapping = {"TX_RX_TIMER_TOP": "counter1 comp. A (top)",
-                          "TX_RX_TIMER_CENTER": "counter1 comp. B (center)",
+interruptToNameMapping = {"TX_TIMER_INTERRUPT": "counter1 comp. A (top)",
+                          "LOCAL_TIME_TIMER_INTERRUPT": "counter1 comp. B (center)",
                           "TX_RX_TIMEOUT_INTERRUPT": "counter0 comp. A",
                           "NORTH_RECEPTION": "north reception",
+                          "EAST_RECEPTION": "east reception",
+                          "SOUTH_RECEPTION": "south reception",
                           }
 
 interruptDomainToNameMapping = {"post": "un-/posting",
@@ -42,6 +44,7 @@ charOutToHumanReadableAnnotation = {
     "'R'": "INITIATOR_STATE_TYPE_WAIT_FOR_RESPONSE",
     "'A'": "INITIATOR_STATE_TYPE_TRANSMIT_ACK",
     "'f'": "INITIATOR_STATE_TYPE_TRANSMIT_ACK_WAIT_FOR_TX_FINISHED",
+
     "'d'": "RECEPTIONIST_STATE_TYPE_IDLE",
     "'r'": "RECEPTIONIST_STATE_TYPE_RECEIVE",
     "'a'": "RECEPTIONIST_STATE_TYPE_TRANSMIT_ACK",
@@ -59,12 +62,25 @@ charOutToHumanReadableAnnotation = {
     "'x'": "x",
     "'X'": "X",
 
-    "'b'" : "counter timeout",
-    "'u'" : "error: decode/interpreter",
+    "'b'": "counter timeout",
+    "'u'": "error: decode/interpreter",
 
     "'y'": "command executing",
     "'Y'": "command executing done",
 
-    "'z'" : "enter sleep mode",
-    "'Z'" : "exit sleep mode",
+    "'z'": "enter sleep mode",
+    "'Z'": "exit sleep mode",
+
+    "'o'" : "enable north rx",
+    "'q'" : "enable east rx",
+    "'m'" : "enable south rx",
+    "'O'": "enable north rx",
+    "'Q'": "enable east rx",
+    "'N'": "enable south rx",
+
+    "'9'": "parity error",
+    "'8'": "buffer overfow",
+
+    "'t'": "tx start",
+    "'U'": "tx end",
 }
